@@ -1,24 +1,75 @@
-nav {
+/* Container for the entire navbar */
+.navbar-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between; /* Pushes content to the ends */
+    align-items: center; /* Vertically centers items */
     background-color: #333;
+    height: 60px; /* Fixed height for the navbar */
+    padding: 0 20px; /* Padding on left and right */
+    width: 100%; /* Ensure it spans full width */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
-.logo{
-    margin-right: auto;
-    padding-left: 10px;
-    color: white
+/* Styling for the Blog Application link/brand */
+.navbar-brand-link {
+    text-decoration: none; /* Remove underline from the brand link */
 }
 
-a {
+/* Styling for the H3 tag within the logo link */
+.logo {
+    color: white;
+    font-size: 24px; /* Slightly larger for prominence */
+    font-weight: bold;
+    margin: 0; /* Remove default h3 margins */
+    padding: 0; /* Remove default h3 padding */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Group for the right-side navigation links */
+.nav-links-group {
+    display: flex; /* Make this group a flex container itself */
+    align-items: center; /* Vertically align links within the group */
+    gap: 20px; /* Space between the links in the group */
+}
+
+/* Styling for individual navigation links */
+.nav-link {
     color: whitesmoke;
     text-decoration: none;
-    font-size: 12px;
-    margin-left: 18px;
-    padding: 10px;
+    font-size: 16px; /* Adjust font size for better readability */
+    padding: 8px 12px; /* Add more padding for better click/tap area */
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Smooth transition */
+    border-radius: 5px; /* Slightly rounded corners for buttons */
 }
 
-a:hover{
+.nav-link:hover {
     color: coral;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 15px; /* Adjust padding for smaller screens */
+        height: auto; /* Allow height to adjust */
+        flex-wrap: wrap; /* Allow items to wrap on smaller screens if necessary */
+    }
+
+    .nav-links-group {
+        flex-direction: column; /* Stack links vertically on small screens */
+        width: 100%; /* Take full width */
+        gap: 5px; /* Reduce gap when stacked */
+        padding-top: 10px; /* Add some space above stacked links */
+    }
+
+    .nav-link {
+        width: 100%; /* Make links take full width when stacked */
+        text-align: center; /* Center text when stacked */
+    }
+    
+    .navbar-brand-link {
+        width: 100%; /* Ensure brand link takes full width if wrapping occurs */
+        text-align: center;
+        padding-bottom: 10px;
+    }
 }
