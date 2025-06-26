@@ -1,9 +1,202 @@
+/* Overall container for the blogs page */
 .blogs-container {
-    width: 96%;
-    max-width: 1140px;
-    margin: auto;
+    width: 96%; /* Responsive width */
+    max-width: 1140px; /* Maximum width for larger screens */
+    margin: 40px auto; /* Center the container and add vertical spacing */
+    padding: 0 20px; /* Horizontal padding for content */
+    font-family: 'Inter', sans-serif; /* Consistent font with Details.css */
+    color: #333; /* Default text color */
 }
 
+/* Styling for the search bar container */
+.search-container {
+    margin-bottom: 40px; /* Space below the search bar */
+    display: flex; /* Use flexbox to align input and button */
+    justify-content: center; /* Center the input and button group */
+    gap: 15px; /* Space between input and button */
+    align-items: center; /* Vertically align items */
+}
+
+/* Styling for the search input field */
+.search-input {
+    width: 100%; /* Full width within its flex item */
+    max-width: 400px; /* Limit max width of the input */
+    padding: 12px 20px;
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 25px; /* Rounded corners for a modern look */
+    font-size: 1em;
+    outline: none; /* Remove outline on focus */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.search-input::placeholder {
+    color: #aaa; /* Lighter placeholder text */
+}
+
+.search-input:focus {
+    border-color: #667eea; /* Highlight border on focus */
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.2); /* Stronger shadow on focus */
+}
+
+/* Styling for the search button */
+.search-button {
+    padding: 12px 25px;
+    background-color: #667eea; /* Primary button color */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3); /* Subtle shadow */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.search-button:hover {
+    background-color: #536cdb; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.search-button:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 2px 5px rgba(102, 126, 234, 0.2);
+}
+
+/* Container for all blog article cards */
+article {
+    display: grid; /* Use CSS Grid for a flexible card layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 30px; /* Space between grid items (cards) */
+}
+
+/* Styling for individual blog cards wrapped in Link */
+.card-link {
+    text-decoration: none; /* Remove underline from Link component */
+    color: inherit; /* Inherit text color for the link */
+}
+
+/* Styling for individual blog cards */
 .card {
+    background-color: #fff;
+    border-radius: 10px; /* Rounded corners consistent with other elements */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* More pronounced shadow for cards */
+    padding: 25px;
+    height: auto; /* Allow card height to adjust based on content */
+    display: flex; /* Flexbox for content inside the card */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Push hr to bottom if content is short */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    cursor: pointer; /* Indicate that the card is clickable */
+}
+
+/* Hover effect for the cards */
+.card-link:hover .card { /* Apply hover effect to the card when the link is hovered */
+    transform: translateY(-5px); /* Lift card slightly on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+
+/* Styling for the title within each card */
+.card h2 {
+    font-size: 1.8em;
     color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+/* Styling for the content preview paragraph within each card */
+.card p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allow content to take available space */
+}
+
+/* Styling for the horizontal rule within each card */
+.card hr {
+    border: none;
+    border-top: 1px solid #eee; /* Light separator line */
+    margin-top: 15px;
+    margin-bottom: 0; /* No margin at the bottom of hr */
+}
+
+/* Message for no search results */
+.no-results {
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+    grid-column: 1 / -1; /* Make it span all columns in the grid */
+    padding: 40px 0;
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .blogs-container {
+        margin: 20px auto; /* Adjust margin for smaller screens */
+        padding: 0 15px; /* Adjust padding */
+    }
+
+    .search-container {
+        margin-bottom: 30px;
+        flex-direction: column; /* Stack input and button on small screens */
+        gap: 10px; /* Adjust gap for stacked items */
+        align-items: stretch; /* Stretch items to full width */
+    }
+
+    .search-input {
+        padding: 10px 15px;
+        font-size: 0.95em;
+        max-width: 100%; /* Allow input to take full width when stacked */
+    }
+
+    .search-button {
+        padding: 10px 20px;
+        font-size: 0.95em;
+        width: 100%; /* Make button take full width when stacked */
+        max-width: 300px; /* Limit button width for better appearance */
+    }
+
+    article {
+        grid-template-columns: 1fr; /* Single column layout on small screens */
+        gap: 20px; /* Reduce gap */
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.6em;
+    }
+
+    .card p {
+        font-size: 0.95em;
+    }
+}
+
+/* Even smaller screens (e.g., phones) */
+@media (max-width: 480px) {
+    .blogs-container {
+        padding: 0 10px;
+    }
+
+    .search-container {
+        margin-bottom: 25px;
+    }
+
+    .search-input {
+        font-size: 0.9em;
+    }
+
+    .search-button {
+        font-size: 0.9em;
+    }
+
+    .card h2 {
+        font-size: 1.4em;
+    }
 }
