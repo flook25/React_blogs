@@ -4,6 +4,7 @@ import Blogs from "./components/Blogs"
 import { BrowserRouter, Routes, Route , Navigate} from "react-router-dom"
 import Navbar from "./components/Navbar"
 import NotFound from "./components/NotFound"
+import Details from "./components/Details"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="*" element= {<NotFound/>} />
           <Route path="/home" element = {<Navigate to='/'/>}/>
           <Route path="/info" element = {<Navigate to='/about'/>}/>
+          <Route path="/blogs/:id" element={<Details/>}/>
         </Routes>
       </BrowserRouter>
     </div>
