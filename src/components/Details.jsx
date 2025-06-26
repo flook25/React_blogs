@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import blogs from "../data/blogs"
+import './Details.css'
 
 export default function Details() {
 

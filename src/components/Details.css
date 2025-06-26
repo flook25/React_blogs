@@ -1,0 +1,92 @@
+/* Overall container for the blog post details */
+.container {
+    max-width: 800px; /* Limit the maximum width of the content */
+    margin: 40px auto; /* Center the container horizontally and add vertical space */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px; /* Apply rounded corners to the container */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Inter', sans-serif; /* Use Inter font */
+    color: #333; /* Darker text color for readability */
+}
+
+/* Styling for the article title */
+.title {
+    font-size: 2.5em; /* Larger font size for the main title */
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0; /* Separator line below the title */
+}
+
+/* Styling for the blog post image */
+.container img {
+    width: 100%; /* Make image responsive within its container */
+    max-height: 400px; /* Limit the maximum height of the image */
+    object-fit: cover; /* Ensure image covers the area without distortion */
+    border-radius: 8px; /* Rounded corners for the image */
+    margin-bottom: 30px;
+    display: block; /* Ensure image behaves as a block element */
+}
+
+/* Container for blog details (author and content) */
+.blog-detail {
+    line-height: 1.8; /* Improve readability with more line spacing */
+    font-size: 1.1em;
+}
+
+/* Styling for the author text */
+.blog-detail strong {
+    display: block; /* Make author name appear on its own line */
+    font-size: 1.05em;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: right; /* Align author name to the right */
+}
+
+/* Styling for the blog content paragraph */
+.blog-detail p {
+    margin-bottom: 20px;
+    text-align: justify; /* Justify text for a clean look */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto; /* Reduce margin on smaller screens */
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .title {
+        font-size: 2em; /* Adjust title size for mobile */
+        margin-bottom: 20px;
+    }
+
+    .container img {
+        max-height: 300px; /* Adjust max image height for mobile */
+        margin-bottom: 20px;
+    }
+
+    .blog-detail {
+        font-size: 1em; /* Adjust content font size for mobile */
+    }
+
+    .blog-detail strong {
+        font-size: 1em;
+        text-align: left; /* Align author to left on smaller screens */
+    }
+}
+
+/* Even smaller screens (e.g., phones) */
+@media (max-width: 480px) {
+    .container {
+        margin: 15px; /* Add margin on all sides to prevent sticking to edges */
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+}
