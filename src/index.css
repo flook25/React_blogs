@@ -5,3 +5,14 @@
     align-items: center;
 
 }
+
+.title {
+    color: #333;
+    text-align: center;
+}
+
+img {
+    width: 550px;
+    height: 500px;
+    
+}
